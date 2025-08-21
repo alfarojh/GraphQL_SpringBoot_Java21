@@ -1,0 +1,37 @@
+type Query {
+    users: [User]
+    userById(id: ID!): User
+    merchants: [Merchant]
+    merchantById(id: ID!): Merchant
+}
+
+type Mutation {
+    addUser(user: UserInput): User
+    addMerchant(merchant: MerchantInput): Merchant
+}
+
+input UserInput {
+    name: String
+    email: String
+    merchantId: String
+}
+
+input MerchantInput {
+    name: String
+    email: String
+    userId: String
+}
+
+type User {
+    id: ID!
+    name: String
+    email: String
+    merchant: Merchant
+}
+
+type Merchant {
+    id: ID!
+    name: String
+    email: String
+    users: User
+}
