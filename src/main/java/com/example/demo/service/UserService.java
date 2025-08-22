@@ -13,7 +13,6 @@ public class UserService {
 
     private final DB db;
 
-    private Long counter = 1L;
     private final List<User> users;
 
     public UserService(DB db) {
@@ -31,7 +30,7 @@ public class UserService {
 
     public User create(UserInput userInput) {
         User user = new User();
-        user.setId(counter++);
+        user.setId(users.size() + 1L);
         user.setName(userInput.getName());
         user.setEmail(userInput.getEmail());
 

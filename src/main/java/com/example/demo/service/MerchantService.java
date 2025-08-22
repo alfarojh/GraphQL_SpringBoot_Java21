@@ -12,7 +12,6 @@ import java.util.List;
 public class MerchantService {
     private final DB db;
 
-    private Long counter = 1L;
     private final List<Merchant> merchants;
 
     public MerchantService(DB db) {
@@ -21,6 +20,7 @@ public class MerchantService {
     }
 
     public List<Merchant> getAll() {
+        System.out.println(merchants.getFirst().getUser().getId());
         return merchants;
     }
 
@@ -30,7 +30,7 @@ public class MerchantService {
 
     public Merchant create(MerchantInput merchantInput) {
         Merchant merchant = new Merchant();
-        merchant.setId(counter++);
+        merchant.setId(merchants.size() + 1L);
         merchant.setName(merchantInput.getName());
         merchant.setEmail(merchantInput.getEmail());
 

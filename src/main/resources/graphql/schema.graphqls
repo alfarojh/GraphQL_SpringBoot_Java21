@@ -35,5 +35,5 @@ type Merchant {
     id: ID!
     name: String
     email: String
-    users: User
+    user: User
 }
