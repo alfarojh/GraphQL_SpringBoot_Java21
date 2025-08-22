@@ -1,3 +1,5 @@
+directive @complexity(value: Int!) on FIELD_DEFINITION
+
 type Query {
     users: [User]
     userById(id: ID!): User
@@ -23,8 +25,8 @@ input MerchantInput {
 }
 
 type User {
-    id: ID!
-    name: String
+    id: ID! @complexity(value: 10)
+    name: String @complexity(value: 20)
     email: String
     merchant: Merchant
 }

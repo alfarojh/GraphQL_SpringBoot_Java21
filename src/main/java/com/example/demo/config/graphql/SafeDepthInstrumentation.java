@@ -1,4 +1,4 @@
-package com.example.demo.config;
+package com.example.demo.config.graphql;
 
 import graphql.ExecutionResult;
 import graphql.analysis.MaxQueryDepthInstrumentation;

@@ -1,15 +1,12 @@
-package com.example.demo.config;
+package com.example.demo.config.graphql;
 
 import graphql.ExecutionResult;
 import graphql.analysis.FieldComplexityCalculator;
-import graphql.analysis.FieldComplexityEnvironment;
 import graphql.analysis.MaxQueryComplexityInstrumentation;
 import graphql.execution.instrumentation.InstrumentationContext;
 import graphql.execution.instrumentation.InstrumentationState;
 import graphql.execution.instrumentation.SimpleInstrumentationContext;
 import graphql.execution.instrumentation.parameters.InstrumentationExecuteOperationParameters;
-
-import java.util.Map;
 
 public class SafeComplexityInstrumentation extends MaxQueryComplexityInstrumentation {
     public SafeComplexityInstrumentation(int maxComplexity, FieldComplexityCalculator fieldComplexityCalculator) {
