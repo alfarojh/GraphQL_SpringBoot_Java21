@@ -1,7 +1,7 @@
 directive @complexity(value: Int!) on FIELD_DEFINITION
 
 type Query {
-    users: [User]
+    users: [User] @complexity(value: 0)
     userById(id: ID!): User
     merchants: [Merchant]
     merchantById(id: ID!): Merchant

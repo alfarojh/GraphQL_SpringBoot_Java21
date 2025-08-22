@@ -13,7 +13,9 @@ public class WeightCalculate implements FieldComplexityCalculator {
 
         if (directive != null) {
             GraphQLArgument arg = directive.getArgument("value");
-            Object astValue = arg.getArgumentValue().getValue(); // AST node
+            Object astValue = arg.toAppliedArgument()
+                    .getArgumentValue()
+                    .getValue(); // AST node
 
             if (astValue instanceof IntValue intValue) {
                 return intValue.getValue().intValue() + childComplexity;
